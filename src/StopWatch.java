@@ -44,12 +44,12 @@ public class StopWatch implements ActionListener{
 		
 		//start button
 		startButton.setBounds(135,208,100,30);
-		startButton.setFont(new Font("Ink Free", Font.PLAIN,20));
+		startButton.setFont(new Font("Times New Roman", Font.PLAIN,20));
 		startButton.setFocusable(false);
 		startButton.addActionListener(this);
 		
 		resetButton.setBounds(237,208,100,30);
-		resetButton.setFont(new Font("Ink Free", Font.PLAIN,20));
+		resetButton.setFont(new Font("Times New Roman", Font.PLAIN,20));
 		resetButton.setFocusable(false);
 		resetButton.addActionListener(this);
 		
@@ -65,7 +65,30 @@ public class StopWatch implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource()==startButton) {
-			start();
+			
+			
+			if (timeActive==false) {
+				timeActive = true;
+				startButton.setText("STOP");
+				startButton.setBackground(Color.RED);
+				start();
+			}
+			
+			else {
+				timeActive = false;
+				startButton.setText("START");
+				startButton.setBackground(null);
+				stop();
+			}
+		}
+		
+		if(e.getSource() == resetButton) {
+			
+				timeActive= false;
+				startButton.setText("START");
+				startButton.setBackground(null);
+				reset();			
+			
 		}
 		
 	}
@@ -75,10 +98,18 @@ public class StopWatch implements ActionListener{
 	}
 	
 	void stop() {
-		
+		timer.stop();
 	}
 	
 	void reset() {
-		
+		timer.stop();
+		elapsedTime = 0;
+		hours = 0;
+		minutes = 0;
+		seconds = 0;
+		seconds_string = String.format("%02d", seconds);
+		minutes_string = String.format("%02d", minutes);
+		hours_string = String.format("%02d", hours);
+		timeLabel.setText(hours_string+":"+minutes_string+":"+seconds_string);
 	}
 }
