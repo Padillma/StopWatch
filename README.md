@@ -20,8 +20,7 @@
 5. Timer is at Zero when app opens.
 
 ## Dev Notes
-the main purpose of this project. it is made to create an actual java application using SCRUM Agile.
-Im also impleteing git and JUnit testing. This will be considered my first Sprint.
+the main purpose of this project is to create an java application using SCRUM Agile.
 After all requirements are complete, will the sprint be done. Requirements may be added or removed before final review.
 
 ## Second sprint
@@ -39,6 +38,3 @@ UNFUNC.
 1. Green font color for best lap time and red for the worst
 2. lap times can be name Lap 1, Lap 2, Lap 3, etc. but in decending order
 3. changing the favicon for the window.
-
-4/2/2023
-will meet with client to approve requirements or add if any are missing
